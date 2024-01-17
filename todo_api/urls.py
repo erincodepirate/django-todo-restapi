@@ -1,9 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
-from todo_api import urls as todo_urls
+from .views import ( TodoListApiView )
 
 urlpatterns = [
-    path('admin/', admin.site.uls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('todos/', include(todo_urls))
+    path('api', TodoListApiView.as_view()),
 ]
